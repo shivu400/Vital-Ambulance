@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+.venv-*/
+env/
+.env
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Models / Data (Optional depending on if we want to commit them or not. We should commit the final ones to show it works, but usually not large data)
+*.parquet
+*.pkl
+# Wait, for the assignment we want to commit the model to show it runs smoothly, so let's allow models but ignore __pycache__.
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+.DS_Store

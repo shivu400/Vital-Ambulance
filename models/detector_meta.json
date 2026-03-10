@@ -1,0 +1,12 @@
+{
+  "threshold": 0.1573974244299823,
+  "score_std": 0.13551718716755287,
+  "feature_cols": [
+    "hr",
+    "spo2",
+    "sbp",
+    "dbp",
+    "rr",
+    "temp"
+  ]
+}

@@ -1,0 +1,31 @@
+.risk-badge {
+  @apply inline-block px-4 py-2 rounded-full font-semibold text-white;
+}
+
+.risk-danger {
+  @apply bg-medical-danger;
+}
+
+.risk-warning {
+  @apply bg-medical-warning;
+}
+
+.risk-safe {
+  @apply bg-medical-safe;
+}
+
+.metric-card {
+  @apply bg-gray-50 rounded-lg p-4 border-l-4;
+}
+
+.metric-card.danger {
+  @apply border-medical-danger;
+}
+
+.metric-card.warning {
+  @apply border-medical-warning;
+}
+
+.metric-card.safe {
+  @apply border-medical-safe;
+}

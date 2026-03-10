@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-dark: #0a0c10;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --medical-blue: #3b82f6;
+  --medical-cyan: #06b6d4;
+  --medical-red: #ef4444;
+  --medical-green: #10b981;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-dark);
+  color: #e2e8f0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Outfit', sans-serif;
+}
+
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+}
+
+.glow-red {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.2);
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.2);
+}
+
+/* Custom transitions */
+.transition-all-custom {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+@layer components {
+  .btn-primary {
+    @apply relative px-6 py-3 rounded-xl font-bold text-white transition-all duration-300 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 active:scale-95 shadow-lg shadow-blue-900/20 glow-blue overflow-hidden;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-slate-900/60 border border-slate-700/80 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-400 placeholder-slate-500 transition-all duration-300 text-slate-100 font-medium;
+  }
+}
+
+/* Custom Range Sliders */
+input[type=range] {
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: white;
+  margin-top: -8px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  border: 3px solid currentColor;
+  transition: transform 0.1s;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: rgba(30, 41, 59, 0.8);
+  border-radius: 9999px;
+  border: 1px solid rgba(51, 65, 85, 0.3);
+}
+
+input[type=range]:active::-webkit-slider-thumb {
+  transform: scale(1.2);
+}
+
+/* Base colors for thumb matching */
+input[name="hr"]::-webkit-slider-thumb {
+  color: var(--medical-blue);
+}
+
+input[name="spo2"]::-webkit-slider-thumb {
+  color: var(--medical-cyan);
+}
+
+.mesh-gradient {
+  background-color: hsla(220, 24%, 6%, 1);
+  background-image:
+    radial-gradient(at 0% 0%, hsla(217, 91%, 60%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(199, 89%, 48%, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(217, 91%, 60%, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(199, 89%, 48%, 0.1) 0px, transparent 50%);
+}

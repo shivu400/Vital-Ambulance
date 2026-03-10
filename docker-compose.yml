@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - .:/app:cached
+    command: uvicorn src.api.main:app --host 0.0.0.0 --port 8000
+    networks:
+      - ambulance-network
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=http://api:8000
+    depends_on:
+      - api
+    networks:
+      - ambulance-network
+
+networks:
+  ambulance-network:
+    driver: bridge
